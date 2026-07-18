@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowLingo - Aprenda Idiomas Brincando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TELA DE LOGIN / CADASTRO -->
+    <div id="auth-screen" class="screen">
+        <div class="auth-box">
+            <span class="owl-mascot">🦉</span>
+            <h1>GlowLingo</h1>
+            <p>Aprenda idiomas de forma leve, rápida e divertida!</p>
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Digite seu nome de usuário">
+            </div>
+            <button class="btn btn-primary" onclick="fazerCadastro()">Começar Agora 🚀</button>
+        </div>
+    </div>
+
+    <!-- PAINEL PRINCIPAL (DASHBOARD) -->
+    <div id="main-screen" class="screen hidden">
+        <nav class="navbar">
+            <div class="logo">🦉 GlowLingo</div>
+            <div class="nav-status">
+                <span class="status-item">🔥 <span id="user-streak">0</span> dias</span>
+                <span class="status-item">💎 <span id="user-xp">0</span> XP</span>
+                <span id="display-name" class="user-badge">Perfil</span>
+            </div>
+        </nav>
+
+        <div class="dashboard-container">
+            <!-- Barra Lateral: Escolha de Idioma -->
+            <aside class="sidebar">
+                <h3>O que quer aprender hoje?</h3>
+                <div class="lang-selector">
+                    <button class="lang-btn active" onclick="mudarIdioma('ingles')">🇺🇸 Inglês</button>
+                    <button class="lang-btn" onclick="mudarIdioma('espanhol')">🇪🇸 Espanhol</button>
+                    <button class="lang-btn" onclick="mudarIdioma('frances')">🇫🇷 Francês</button>
+                </div>
+            </aside>
+
+            <!-- Conteúdo Principal -->
+            <main class="main-content">
+                
+                <!-- Seção de Histórias -->
+                <section class="section-card">
+                    <h2>📜 Histórias do Idioma</h2>
+                    <p>Viaje no tempo e entenda a origem das palavras!</p>
+                    <div class="story-grid" id="story-container">
+                        <!-- Gerado dinamicamente -->
+                    </div>
+                </section>
+
+                <!-- Seção de Lições e Provas -->
+                <section class="section-card">
+                    <h2>🎯 Trilha de Aprendizado</h2>
+                    <div class="quiz-box">
+                        <div class="progress-bar-container">
+                            <div id="quiz-progress" class="progress-bar"></div>
+                        </div>
+                        <h3 id="question-title">Carregando atividade...</h3>
+                        <div id="options-container" class="options-grid">
+                            <!-- Opções geradas via JS -->
+                        </div>
+                        <div id="quiz-feedback" class="feedback-msg"></div>
+                        <button id="next-btn" class="btn btn-success hidden" onclick="proximaAtividade()">Avançar ✨</button>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
