@@ -1,0 +1,173 @@
+:root {
+    --primary: #58cc02;
+    --primary-hover: #46a302;
+    --secondary: #1cb0f6;
+    --accent: #ffc200;
+    --dark: #3c3c3c;
+    --light-bg: #f7f7f7;
+    --border: #e5e5e5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--dark);
+}
+
+.hidden { display: none !important; }
+
+/* Telas */
+.screen {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tela de Autenticação */
+#auth-screen {
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #1cb0f6, #58cc02);
+}
+
+.auth-box {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+    max-width: 400px;
+    width: 90%;
+}
+
+.owl-mascot {
+    font-size: 64px;
+    display: inline-block;
+    animation: bounce 2s infinite ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    font-size: 16px;
+    margin: 20px 0;
+    outline: none;
+}
+
+/* Navbar */
+.navbar {
+    background: white;
+    border-bottom: 2px solid var(--border);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { font-size: 26px; font-weight: 900; color: var(--primary); }
+.nav-status { display: flex; gap: 20px; align-items: center; font-weight: bold; }
+.status-item { background: #fff; padding: 6px 12px; border-radius: 12px; border: 2px solid var(--border); }
+.user-badge { background: #e1f0ff; color: var(--secondary); padding: 6px 12px; border-radius: 12px; }
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    max-width: 1200px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.sidebar {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 20px;
+    height: fit-content;
+}
+
+.lang-selector { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
+
+.lang-btn {
+    padding: 12px;
+    border: 2px solid var(--border);
+    background: white;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.lang-btn.active, .lang-btn:hover {
+    border-color: var(--secondary);
+    background: #f0f9ff;
+    color: var(--secondary);
+}
+
+/* Cards de Conteúdo */
+.section-card {
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px; }
+.story-card { background: #fff8e5; border: 2px solid #ffe6a3; padding: 15px; border-radius: 14px; }
+
+/* Área do Quiz */
+.quiz-box { text-align: center; margin-top: 20px; }
+.progress-bar-container { background: var(--border); height: 14px; border-radius: 10px; overflow: hidden; margin-bottom: 25px; }
+.progress-bar { background: var(--primary); width: 0%; height: 100%; transition: 0.3s; }
+
+.options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 25px 0; }
+
+/* Botões Estilo Jogo Físico */
+.btn {
+    padding: 14px 28px;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.btn-primary { background: var(--primary); color: white; box-shadow: 0 5px 0 var(--primary-hover); }
+.btn-primary:active { transform: translateY(4px); box-shadow: none; }
+
+.btn-success { background: var(--secondary); color: white; box-shadow: 0 5px 0 #1899d6; }
+
+.option-card {
+    background: white;
+    border: 2px solid var(--border);
+    padding: 18px;
+    border-radius: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--border);
+    transition: 0.1s;
+}
+.option-card:active { transform: translateY(4px); box-shadow: none; }
+
+/* Estados do Quiz */
+.option-card.correct { background: #d7ffb7; border-color: #58cc02; color: #3b8501; box-shadow: 0 4px 0 #58cc02; }
+.option-card.wrong { background: #ffdfe0; border-color: #ff4b4b; color: #ea2b2b; box-shadow: 0 4px 0 #ff4b4b; }
+.feedback-msg { font-size: 18px; font-weight: bold; margin-bottom: 15px; min-height: 24px; }
